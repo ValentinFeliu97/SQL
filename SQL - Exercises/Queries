@@ -1,7 +1,7 @@
 use FAFD;
 
 -- 1. Id of the students who got at least one 30
-Select distinct e.Sid, name
+select distinct e.Sid, name
 from Exam e natural join student
 where grade = 30;
 
@@ -23,7 +23,7 @@ where e.grade >= 30;
 select distinct sid, name, city
 from student 
 where sid in (select sid
-				from exam
+		from exam
                 where grade = 30);
                 
 -----------------------------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ from student;
 select sid, birthdate
 from Student
 where birthdate in (select max(birthdate)
-					from student);
+				from student);
 
 
 -----------------------------------------------------------------------------------------------------
